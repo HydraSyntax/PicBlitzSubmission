@@ -14,7 +14,7 @@ let currentColumn = 0;
 function squares(container, row, column, letter = "") {
     const box = document.createElement("div");
     box.className = "box";
-    if (row === 0) {
+    if (row == 0) {
         box.className = "box hl";
     }
     box.id = `box${row}${column}`;
@@ -37,6 +37,7 @@ function startGame() {
     } else {
       if (imageLoaded) {
         getImage();
+        document.getElementById("input").innerHTML = "";
       }
     }
 }
@@ -73,8 +74,10 @@ function setTimer() {
 }
 
 function getImage() {
+    currentRow = 0;
+    currentColumn = 0
     imageLoaded = false;
-    document.getElementById("img").innerHTML = `<img src="static/img/loading.gif" alt="loading..." width="256px">`
+    document.getElementById("img").innerHTML = `<img src="static/img/loading.gif" width="256px">`
     // Get the image
     fetch("/get-image")
         .then(response=>response.blob())
@@ -86,7 +89,7 @@ function getImage() {
                 getKeyWords();
             }
             // Load image
-            document.getElementById("img").innerHTML = `<img alt="image" src='${img.src}'>`;
+            document.getElementById("img").innerHTML = `<img src='${img.src}'>`;
             document.body.style = "background-image: url("+img.src+");";
         })
 
@@ -151,14 +154,17 @@ function gameOver() {
 		const start = () => {
             setTimeout(function() {
                 confetti.start()
-            }, 1000);
+            }, 1000); // 1000 is time that after 1 second start the confetti ( 1000 = 1 sec)
         };
+
+        //  for stopping the confetti
 
         const stop = () => {
             setTimeout(function() {
                 confetti.stop()
-            }, 5000);
+            }, 5000); // 5000 is time that after 5 second stop the confetti ( 5000 = 5 sec)
         };
+// after this here we are calling both the function so it works
         start();
         stop();
 	}
@@ -167,10 +173,10 @@ function gameOver() {
 function keyDetect() {
     document.body.onkeydown = (e) => {
         // Check if new turn loading
-        if (!solved) {
+        if (!solved && imageLoaded) {
             const key = e.key;
             let letter;
-            if (key.length === 1 && key.match(/[a-z]/i)) {
+            if (key.length == 1 && key.match(/[a-z]/i)) {
                 letter = true;
             }
 
@@ -185,7 +191,6 @@ function keyDetect() {
                 console.log(keywords[currentRow])
                 // Check if current user input's row is the word
                 if (current === keywords[currentRow]) {
-                    console.log(currentRow, keywords.length);
                     // If they are completely done
                     if (currentRow === keywords.length - 1) {
                         // Load new image and reset everything else
@@ -366,7 +371,7 @@ var confetti = {
 		var count = confetti.maxCount;
 		if (min) {
 			if (max) {
-				if (min === max)
+				if (min == max)
 					count = particles.length + max;
 				else {
 					if (min > max) {

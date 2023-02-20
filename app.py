@@ -6,8 +6,8 @@ import openai
 
 # Inits
 app = Flask(__name__)
-app.secret_key = "uhhh"
-secret = "secret_key"
+app.secret_key = "secret"
+secret = "API_Key"
 
 # Setting up API
 openai.api_key = secret
