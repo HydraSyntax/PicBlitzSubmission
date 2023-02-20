@@ -2,53 +2,76 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>WordList</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <script src="/static/js/main.js"></script>
+    <title>PicBlitz!</title>
 </head>
-<body>
-  Locations:
-  ocean
-  clouds
-  flood
-  storm
-  rain
-  snow
-  desert
-  city
-  forest
-  house
-  mountain
-  bridge
-  church
-  <br>
-  <br>
-  Verbs:
-  eating
-  crying
-  walking
-  swimming
-  running
-  jumping
-  flying
-  shouting
-  drinking
-  <br>
-  <br>
-  Nouns:
-  tiger
-  mouse
-  man
-  woman
-  lion
-  elephant
-  mouse
-  dog
-  cat
-  bird
-  goose
-  wallet
-  flag
-  book
-  umbrella
-  bag
+<body style="background-image: url(/static/i.jpg);">
+   <div class="pane">
+        <nav>
+            <h1><img src="/static/logo.png"></h1>
+          <div>
+            <button onclick="window.open('/words')" class='cta' id="main">Words</button>
+            <button onclick="startGame()" class="cta" id="main">Play!</button>
+          </div>
+        </nav>
+        <main>
+            <div id="img">
+                <img src="/static/i.jpg">
+            </div>
+            <div id="input">
+                <div class="guide">
+                    <h1>Word List:</h1>
+                    Locations:
+                    ocean
+                    clouds
+                    flood
+                    storm
+                    rain
+                    snow
+                    desert
+                    city
+                    forest
+                    house
+                    mountain
+                    bridge
+                    church
+                    <br>
+                    <br>
+                    Verbs:
+                    eating
+                    crying
+                    walking
+                    swimming
+                    running
+                    jumping
+                    flying
+                    shouting
+                    drinking
+                    <br>
+                    <br>
+                    Nouns:
+                    tiger
+                    mouse
+                    man
+                    woman
+                    lion
+                    elephant
+                    mouse
+                    dog
+                    cat
+                    bird
+                    goose
+                    wallet
+                    flag
+                    book
+                    umbrella
+                    bag
+                </div>
+            </div>
+        </main>
+   </div>
 </body>
 </html>
