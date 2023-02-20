@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <script src="/static/js/main.js"></script>
+    <title>PicBlitz!</title>
+</head>
+<body style="background-image: url(/static/i.jpg);">
+   <div class="pane">
+        <nav>
+            <h1><img src="/static/logo.png"></h1>
+            <button onclick="startGame()" class="cta" id="main">Play!</button>
+        </nav>
+        <main>
+            <div id="img">
+                <img src="/static/i.jpg">
+            </div>
+            <div id="input">
+                <div class="guide">
+                    <h1>How to Play</h1>
+                    <ul>
+                        <ol>An AI-generated image is created based on 3 keywords</ol>
+                        <ol>The format for each image is as follows: setting, subject, verb</ol>
+                        <ol>For every image you guess, you get a point</ol>
+                    </ul>
+                </div>
+            </div>
+        </main>
+   </div>
+</body>
+</html>

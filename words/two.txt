@@ -1,0 +1,16 @@
+tiger
+mouse
+man
+woman
+lion
+elephant
+mouse
+dog
+cat
+bird
+goose
+wallet
+flag
+book
+umbrella
+bag
